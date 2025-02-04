@@ -21,8 +21,19 @@ namespace weatherapp
             XDocument doc = XDocument.Load(requestUrl);
 
             string moonPhs = (string)doc.Descendants("moon_phase").FirstOrDefault();
+            string maxT = (string)doc.Descendants("maxtemp_c").FirstOrDefault();
+            string minT = (string)doc.Descendants("mintemp_c").FirstOrDefault();
+            string hum = (string)doc.Descendants("avghumidity").FirstOrDefault();
+            string windSpd = (string)doc.Descendants("wind_kph").FirstOrDefault();
+            string baroPrss = (string)doc.Descendants("pressure_mb").FirstOrDefault();
+
 
             moonPhase.Text = moonPhs;
+            maxTemp.Text = maxT;
+            minTemp.Text = minT;
+            humidity.Text = hum;
+            windSpeed.Text = windSpd;
+            atmPressure.Text = baroPrss;
         }
     }
 }
