@@ -3,6 +3,8 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Net;
+using System.IO;
 
 namespace weatherapp
 {
@@ -27,6 +29,14 @@ namespace weatherapp
             string windSpd = (string)doc.Descendants("wind_kph").FirstOrDefault();
             string baroPrss = (string)doc.Descendants("pressure_mb").FirstOrDefault();
 
+            string pictureUrl = (string)doc.Descendants("icon").FirstOrDefault();
+
+            WebClient client = new WebClient();
+            byte[] image = client.DownloadData("http:" + pictureUrl);
+            MemoryStream stream = new MemoryStream(image);
+            Bitmap icon = new Bitmap(stream);
+
+            conditionPic.Image = icon;
 
             moonPhase.Text = moonPhs;
             maxTemp.Text = maxT;

@@ -14,3 +14,4 @@ C:\Users\Maksims Datorium\source\repos\weatherapp\weatherapp\obj\Debug\net8.0-wi
 C:\Users\Maksims Datorium\source\repos\weatherapp\weatherapp\obj\Debug\net8.0-windows\weatherapp.pdb
 C:\Users\Maksims Datorium\source\repos\weatherapp\weatherapp\obj\Debug\net8.0-windows\weatherapp.genruntimeconfig.cache
 C:\Users\Maksims Datorium\source\repos\weatherapp\weatherapp\obj\Debug\net8.0-windows\ref\weatherapp.dll
+C:\Users\Maksims Datorium\source\repos\weatherapp\weatherapp\obj\Debug\net8.0-windows\weatherapp.sourcelink.json

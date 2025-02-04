@@ -43,6 +43,8 @@
             showBtn = new Button();
             moonPhase = new TextBox();
             label7 = new Label();
+            conditionPic = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)conditionPic).BeginInit();
             SuspendLayout();
             // 
             // maxTemp
@@ -167,11 +169,20 @@
             label7.TabIndex = 14;
             label7.Text = "Mēness fāze";
             // 
+            // conditionPic
+            // 
+            conditionPic.Location = new Point(322, 48);
+            conditionPic.Name = "conditionPic";
+            conditionPic.Size = new Size(147, 110);
+            conditionPic.TabIndex = 15;
+            conditionPic.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(559, 471);
+            Controls.Add(conditionPic);
             Controls.Add(label7);
             Controls.Add(moonPhase);
             Controls.Add(showBtn);
@@ -189,6 +200,7 @@
             Controls.Add(maxTemp);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)conditionPic).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,5 +222,6 @@
         private Button showBtn;
         private TextBox moonPhase;
         private Label label7;
+        private PictureBox conditionPic;
     }
 }
