@@ -48,6 +48,9 @@
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
             dataGridView1 = new DataGridView();
+            forecastCity = new TextBox();
+            label8 = new Label();
+            forecastBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)conditionPic).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -223,6 +226,9 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(forecastBtn);
+            tabPage2.Controls.Add(label8);
+            tabPage2.Controls.Add(forecastCity);
             tabPage2.Controls.Add(dataGridView1);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
@@ -235,10 +241,36 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 6);
+            dataGridView1.Location = new Point(6, 47);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(575, 271);
+            dataGridView1.Size = new Size(575, 230);
             dataGridView1.TabIndex = 0;
+            // 
+            // forecastCity
+            // 
+            forecastCity.Location = new Point(339, 18);
+            forecastCity.Name = "forecastCity";
+            forecastCity.Size = new Size(100, 23);
+            forecastCity.TabIndex = 1;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(292, 25);
+            label8.Name = "label8";
+            label8.Size = new Size(41, 15);
+            label8.TabIndex = 2;
+            label8.Text = "Pilsēta";
+            // 
+            // forecastBtn
+            // 
+            forecastBtn.Location = new Point(445, 17);
+            forecastBtn.Name = "forecastBtn";
+            forecastBtn.Size = new Size(136, 23);
+            forecastBtn.TabIndex = 3;
+            forecastBtn.Text = "Parādīt prognozi";
+            forecastBtn.UseVisualStyleBackColor = true;
+            forecastBtn.Click += forecastBtn_Click;
             // 
             // Form1
             // 
@@ -254,6 +286,7 @@
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -280,5 +313,8 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private DataGridView dataGridView1;
+        private Button forecastBtn;
+        private Label label8;
+        private TextBox forecastCity;
     }
 }

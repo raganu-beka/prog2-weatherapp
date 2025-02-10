@@ -50,5 +50,24 @@ namespace weatherapp
         {
 
         }
+
+        private void forecastBtn_Click(object sender, EventArgs e)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Date", typeof(string));
+
+
+            var cityName = forecastCity.Text;
+            var requestUrl = $"http://api.weatherapi.com/v1/forecast.xml?key=ecdaff50705e449ab6311843250302&q={cityName}&days=5";
+
+            XDocument doc = XDocument.Load(requestUrl);
+
+            var forecastDays = doc.Descendants("forecastday");
+
+            foreach (var day in forecastDays)
+            {
+                
+            }
+        }
     }
 }
