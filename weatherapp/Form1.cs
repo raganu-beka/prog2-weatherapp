@@ -19,7 +19,7 @@ namespace weatherapp
         {
             var cityName = city.Text;
             var requestUrl = $"http://api.weatherapi.com/v1/forecast.xml?key=ecdaff50705e449ab6311843250302&q={cityName}&days=1";
-        
+
             XDocument doc = XDocument.Load(requestUrl);
 
             string moonPhs = (string)doc.Descendants("moon_phase").FirstOrDefault();
@@ -44,6 +44,11 @@ namespace weatherapp
             humidity.Text = hum;
             windSpeed.Text = windSpd;
             atmPressure.Text = baroPrss;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
