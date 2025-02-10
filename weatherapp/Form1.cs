@@ -1,10 +1,11 @@
-using System;
+﻿using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Net;
 using System.IO;
+using System.Drawing;
 
 namespace weatherapp
 {
@@ -54,7 +55,12 @@ namespace weatherapp
         private void forecastBtn_Click(object sender, EventArgs e)
         {
             DataTable table = new DataTable();
-            table.Columns.Add("Date", typeof(string));
+            table.Columns.Add("Datums", typeof(string));
+            table.Columns.Add("Minimāla temperatūra", typeof(string));
+            table.Columns.Add("Maksimāla temperatūra", typeof(string));
+            table.Columns.Add("Spiediens", typeof(string));
+            table.Columns.Add("Mēness fāze", typeof(string));
+            table.Columns.Add("Laikapstākļi", typeof(Image));
 
 
             var cityName = forecastCity.Text;
@@ -66,8 +72,26 @@ namespace weatherapp
 
             foreach (var day in forecastDays)
             {
-                
+                string pictureUrl = (string)day.Descendants("icon").FirstOrDefault();
+
+                WebClient client = new WebClient();
+                byte[] image = client.DownloadData("http:" + pictureUrl);
+                MemoryStream stream = new MemoryStream(image);
+                Bitmap icon = new Bitmap(stream);
+
+                object[] row = new object[]
+                {
+                    (string)day.Descendants("date").FirstOrDefault(),
+                    (string)day.Descendants("mintemp_c").FirstOrDefault(),
+                    (string)day.Descendants("maxtemp_c").FirstOrDefault(),
+                    (string)day.Descendants("pressure_mb").FirstOrDefault(),
+                    (string)day.Descendants("moon_phase").FirstOrDefault(),
+                    icon
+                };
+                table.Rows.Add(row);
             }
+
+            forecast.DataSource = table;
         }
     }
 }
