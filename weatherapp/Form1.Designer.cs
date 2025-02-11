@@ -51,6 +51,8 @@
             label8 = new Label();
             forecastCity = new TextBox();
             forecast = new DataGridView();
+            srise = new TextBox();
+            sset = new TextBox();
             ((System.ComponentModel.ISupportInitialize)conditionPic).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -200,6 +202,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(sset);
+            tabPage1.Controls.Add(srise);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(conditionPic);
             tabPage1.Controls.Add(showBtn);
@@ -219,7 +223,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(587, 283);
+            tabPage1.Size = new Size(825, 283);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -272,6 +276,20 @@
             forecast.Size = new Size(810, 224);
             forecast.TabIndex = 0;
             // 
+            // srise
+            // 
+            srise.Location = new Point(144, 189);
+            srise.Name = "srise";
+            srise.Size = new Size(100, 23);
+            srise.TabIndex = 16;
+            // 
+            // sset
+            // 
+            sset.Location = new Point(144, 218);
+            sset.Name = "sset";
+            sset.Size = new Size(100, 23);
+            sset.TabIndex = 17;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -316,5 +334,7 @@
         private Button forecastBtn;
         private Label label8;
         private TextBox forecastCity;
+        private TextBox sset;
+        private TextBox srise;
     }
 }

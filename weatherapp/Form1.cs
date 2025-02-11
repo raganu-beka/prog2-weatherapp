@@ -29,6 +29,8 @@ namespace weatherapp
             string hum = (string)doc.Descendants("avghumidity").FirstOrDefault();
             string windSpd = (string)doc.Descendants("wind_kph").FirstOrDefault();
             string baroPrss = (string)doc.Descendants("pressure_mb").FirstOrDefault();
+            string sunrise = (string)doc.Descendants("sunrise").FirstOrDefault();
+            string sunset = (string)doc.Descendants("sunset").FirstOrDefault();
 
             string pictureUrl = (string)doc.Descendants("icon").FirstOrDefault();
 
@@ -45,6 +47,8 @@ namespace weatherapp
             humidity.Text = hum;
             windSpeed.Text = windSpd;
             atmPressure.Text = baroPrss;
+            srise.Text = sunrise;
+            sset.Text = sunset;
         }
 
         private void Form1_Load(object sender, EventArgs e)
