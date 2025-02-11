@@ -104,6 +104,7 @@ namespace weatherapp
 
             DataGridView dataGrid = new DataGridView();
             dataGrid.Size = new Size(810, 224);
+            dataGrid.Location = new Point(9, 53);
 
             TabPage page = new TabPage(cityName);
 
