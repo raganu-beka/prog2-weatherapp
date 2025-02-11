@@ -97,5 +97,18 @@ namespace weatherapp
 
             forecast.DataSource = table;
         }
+
+        private void saveCity_Click(object sender, EventArgs e)
+        {
+            var cityName = forecastCity.Text;
+
+            DataGridView dataGrid = new DataGridView();
+            dataGrid.Size = new Size(810, 224);
+
+            TabPage page = new TabPage(cityName);
+
+            page.Controls.Add(dataGrid);
+            weatherTabs.TabPages.Add(page);
+        }
     }
 }

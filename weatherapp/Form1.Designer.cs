@@ -44,17 +44,18 @@
             moonPhase = new TextBox();
             label7 = new Label();
             conditionPic = new PictureBox();
-            tabControl1 = new TabControl();
+            weatherTabs = new TabControl();
             tabPage1 = new TabPage();
+            sset = new TextBox();
+            srise = new TextBox();
             tabPage2 = new TabPage();
+            saveCity = new Button();
             forecastBtn = new Button();
             label8 = new Label();
             forecastCity = new TextBox();
             forecast = new DataGridView();
-            srise = new TextBox();
-            sset = new TextBox();
             ((System.ComponentModel.ISupportInitialize)conditionPic).BeginInit();
-            tabControl1.SuspendLayout();
+            weatherTabs.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)forecast).BeginInit();
@@ -190,15 +191,15 @@
             conditionPic.TabIndex = 15;
             conditionPic.TabStop = false;
             // 
-            // tabControl1
+            // weatherTabs
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(12, 12);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(833, 311);
-            tabControl1.TabIndex = 16;
+            weatherTabs.Controls.Add(tabPage1);
+            weatherTabs.Controls.Add(tabPage2);
+            weatherTabs.Location = new Point(12, 12);
+            weatherTabs.Name = "weatherTabs";
+            weatherTabs.SelectedIndex = 0;
+            weatherTabs.Size = new Size(833, 311);
+            weatherTabs.TabIndex = 16;
             // 
             // tabPage1
             // 
@@ -225,11 +226,26 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(825, 283);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "Laiks tagad";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // sset
+            // 
+            sset.Location = new Point(144, 218);
+            sset.Name = "sset";
+            sset.Size = new Size(100, 23);
+            sset.TabIndex = 17;
+            // 
+            // srise
+            // 
+            srise.Location = new Point(144, 189);
+            srise.Name = "srise";
+            srise.Size = new Size(100, 23);
+            srise.TabIndex = 16;
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(saveCity);
             tabPage2.Controls.Add(forecastBtn);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(forecastCity);
@@ -239,8 +255,18 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(825, 283);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Prognoze";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // saveCity
+            // 
+            saveCity.Location = new Point(9, 20);
+            saveCity.Name = "saveCity";
+            saveCity.Size = new Size(114, 23);
+            saveCity.TabIndex = 4;
+            saveCity.Text = "Saglābāt pilsētu";
+            saveCity.UseVisualStyleBackColor = true;
+            saveCity.Click += saveCity_Click;
             // 
             // forecastBtn
             // 
@@ -276,31 +302,17 @@
             forecast.Size = new Size(810, 224);
             forecast.TabIndex = 0;
             // 
-            // srise
-            // 
-            srise.Location = new Point(144, 189);
-            srise.Name = "srise";
-            srise.Size = new Size(100, 23);
-            srise.TabIndex = 16;
-            // 
-            // sset
-            // 
-            sset.Location = new Point(144, 218);
-            sset.Name = "sset";
-            sset.Size = new Size(100, 23);
-            sset.TabIndex = 17;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(904, 343);
-            Controls.Add(tabControl1);
+            Controls.Add(weatherTabs);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)conditionPic).EndInit();
-            tabControl1.ResumeLayout(false);
+            weatherTabs.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
@@ -327,7 +339,7 @@
         private TextBox moonPhase;
         private Label label7;
         private PictureBox conditionPic;
-        private TabControl tabControl1;
+        private TabControl weatherTabs;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private DataGridView forecast;
@@ -336,5 +348,6 @@
         private TextBox forecastCity;
         private TextBox sset;
         private TextBox srise;
+        private Button saveCity;
     }
 }
